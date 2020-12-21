@@ -1,9 +1,9 @@
 package com.ragestreak
 
 import android.app.Application
-import com.ragestreak.modules.coreModules
-import com.ragestreak.modules.repositoryModules
-import com.ragestreak.modules.viewModelModules
+import android.content.Context
+import com.ragestreak.commons.modules.coreModules
+import com.google.android.play.core.splitcompat.SplitCompat
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,11 +14,12 @@ class MyApplication: Application() {
 
         startKoin {
             androidContext(this@MyApplication)
-            modules(
-                coreModules,
-                repositoryModules,
-                viewModelModules
-            )
+            modules(coreModules)
         }
+    }
+
+    override fun attachBaseContext(context: Context?) {
+        super.attachBaseContext(context)
+        SplitCompat.install(this)
     }
 }

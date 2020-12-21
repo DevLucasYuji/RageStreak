@@ -1,3 +1,4 @@
+include ':home'
 include ':ragestreak-commons'
 include ':app'
 rootProject.name = "Rage Streak"
