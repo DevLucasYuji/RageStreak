@@ -12,7 +12,8 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
+    <application
+        android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity"/>
     </application>
 </manifest>

@@ -4,7 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ActivityNavigator
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
@@ -37,7 +42,10 @@ abstract class BaseActivity : AppCompatActivity() {
             REQUIRES_USER_CONFIRMATION -> featureRequiresUserConfirmation?.invoke()
             INSTALLED -> featureInstalledListener?.invoke()
             INSTALLING -> featureInstallingListener?.invoke()
-            FAILED -> featureFailedListener?.invoke()
+            FAILED -> {
+                Log.e(BASE_ACTIVITY_TAG, "Error to install module")
+                featureFailedListener?.invoke()
+            }
             else -> Log.e(BASE_ACTIVITY_TAG, "Unknown Status from dynamic feature")
         }
     }
