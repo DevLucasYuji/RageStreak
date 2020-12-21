@@ -1,14 +1,14 @@
 package com.ragestreak.home
 
-import com.ragestreak.commons.BaseActivity
+import com.ragestreak.commons.BaseFragment
 
 
-class HomeActivity: BaseActivity() {
+class HomeActivity: BaseFragment() {
 
     override val layoutRes: Int
         get() = R.layout.activity_home
 
-    override fun initView() {
 
+    override fun afterViews() {
     }
 }
