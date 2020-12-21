@@ -27,6 +27,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun initView()
 
+    open var navigationViewId: Int? = null
+
+    var bottomNavigationView: View? = null
+
     lateinit var manager: SplitInstallManager
         private set
 
@@ -59,6 +63,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layoutRes)
         manager = SplitInstallManagerFactory.create(this)
+        navigationViewId?.let { bottomNavigationView = findViewById(it) }
         initView()
     }
 
