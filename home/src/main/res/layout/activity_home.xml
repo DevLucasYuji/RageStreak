@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/ic_logo" />
 
     <TextView
@@ -52,13 +52,11 @@
         app:layout_constraintTop_toBottomOf="@id/divisionTitle"
         />
 
-    <Button android:id="@+id/btReady"
-        style="@style/AppTheme.Button"
+    <com.ragestreak.commons.view.Button android:id="@+id/btReady"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="40dp"
-        android:textAlignment="center"
         android:text="@string/ragestreak_ready"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
