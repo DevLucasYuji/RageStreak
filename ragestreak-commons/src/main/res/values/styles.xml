@@ -12,4 +12,11 @@
         <item name="android:fontFamily">@font/nunito_rg</item>
     </style>
 
+    <style name="AppTheme.Button" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:background">@drawable/outline_border</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 </resources>

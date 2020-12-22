@@ -2,4 +2,5 @@
 <resources>
     <string name="ragestreak_welcome"><![CDATA[Bem-vindo\nao RageStreak!]]></string>
     <string name="ragestreak_welcome_desc">No Ragestreak você pode administrar os rages que seus amigos fazem, assim sabendo se é uma boa jogar com eles ou não! eai, preparado?</string>
+    <string name="ragestreak_ready">Estou preparado!</string>
 </resources>
