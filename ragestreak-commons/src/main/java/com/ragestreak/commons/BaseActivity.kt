@@ -6,10 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ActivityNavigator
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
@@ -26,6 +22,10 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract val layoutRes: Int
 
     abstract fun initView()
+
+    open var navigationViewId: Int? = null
+
+    var bottomNavigationView: View? = null
 
     lateinit var manager: SplitInstallManager
         private set
@@ -59,6 +59,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(layoutRes)
         manager = SplitInstallManagerFactory.create(this)
+        navigationViewId?.let { bottomNavigationView = findViewById(it) }
         initView()
     }
 

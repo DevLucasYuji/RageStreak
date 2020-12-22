@@ -2,7 +2,6 @@ package com.ragestreak.home
 
 import com.ragestreak.commons.BaseFragment
 
-
 class HomeActivity: BaseFragment() {
 
     override val layoutRes: Int
@@ -10,5 +9,6 @@ class HomeActivity: BaseFragment() {
 
 
     override fun afterViews() {
+
     }
 }

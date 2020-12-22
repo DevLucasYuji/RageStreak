@@ -9,5 +9,4 @@
         android:name="com.ragestreak.home.HomeActivity"
         android:label="HomeActivity"
         app:moduleName="home" />
-
 </navigation>

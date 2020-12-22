@@ -12,6 +12,8 @@ abstract class BaseFragment: Fragment() {
 
     abstract fun afterViews()
 
+    var bottomNavigation: View? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,5 +23,6 @@ abstract class BaseFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         afterViews()
+        bottomNavigation = (activity as? BaseActivity)?.bottomNavigationView
     }
 }
