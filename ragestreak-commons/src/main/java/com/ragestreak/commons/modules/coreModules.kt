@@ -5,6 +5,7 @@ import com.ragestreak.commons.local.RageDatabase
 import com.ragestreak.commons.remote.GeneralApi
 import com.ragestreak.commons.remote.GeneralApiContract
 import com.ragestreak.commons.remote.GeneralApiHelper
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module
 

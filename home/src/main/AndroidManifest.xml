@@ -14,6 +14,6 @@
 
     <application
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeFragment"/>
+        <activity android:name=".fragment.HomeFragment"/>
     </application>
 </manifest>

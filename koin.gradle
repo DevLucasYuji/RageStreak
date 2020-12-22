@@ -1,0 +1,12 @@
+dependencies {
+    def koin_version = "2.1.6"
+
+// Koin AndroidX Scope feature
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+
+// Koin AndroidX ViewModel feature
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+// Koin AndroidX Fragment Factory (unstable version)
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
+}

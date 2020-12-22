@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeActivity">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeActivity"
-        android:name="com.ragestreak.home.HomeActivity"
-        android:label="HomeActivity"
+        android:id="@+id/homeFragment"
+        android:name="com.ragestreak.home.fragment.HomeFragment"
+        android:label="HomeFragment"
         app:moduleName="home" />
 </navigation>
