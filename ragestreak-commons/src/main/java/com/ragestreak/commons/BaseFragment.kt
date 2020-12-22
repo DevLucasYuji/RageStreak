@@ -5,15 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.ragestreak.commons.modules.RequireInject
 import com.ragestreak.commons.modules.StorageModule
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<B: ViewDataBinding> : Fragment() {
 
     abstract val layoutRes: Int
 
     abstract fun afterViews()
+
+    lateinit var binding: B
 
     var bottomNavigation: View? = null
 
@@ -29,7 +33,11 @@ abstract class BaseFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(layoutRes, container, false)
+    ): View? {
+        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
+        binding.lifecycleOwner = this
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

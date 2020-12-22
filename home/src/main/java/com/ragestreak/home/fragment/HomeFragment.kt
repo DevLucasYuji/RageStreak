@@ -1,16 +1,17 @@
 package com.ragestreak.home.fragment
 
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.ragestreak.commons.BaseFragment
+import com.ragestreak.commons.extension.navigate
 import com.ragestreak.commons.modules.RequireInject
 import com.ragestreak.home.R
+import com.ragestreak.home.databinding.FragmentHomeBinding
 import com.ragestreak.home.homeModules
 import com.ragestreak.home.viewmodel.HomeViewModel
 import com.ragestreak.home.viewmodel.states.HomeEvent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : BaseFragment(), RequireInject {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(), RequireInject {
 
     private val viewModel by viewModel<HomeViewModel>()
 
@@ -23,9 +24,7 @@ class HomeFragment : BaseFragment(), RequireInject {
         viewModel.init()
         viewModel.viewEvent.observe(this, Observer { event ->
             when(event) {
-                is HomeEvent.NavigateToWelcome -> {
-                    findNavController().navigate(com.ragestreak.R.id.welcomeFragment)
-                }
+                is HomeEvent.NavigateToWelcome -> navigate(com.ragestreak.R.id.welcomeFragment)
             }
         })
     }

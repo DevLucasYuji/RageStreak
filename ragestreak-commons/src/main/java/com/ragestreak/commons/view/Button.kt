@@ -1,12 +1,9 @@
 package com.ragestreak.commons.view
 
 import android.content.Context
-import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.ContextThemeWrapper
-import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatButton
-
 import com.ragestreak.commons.R
 
 class Button : AppCompatButton {

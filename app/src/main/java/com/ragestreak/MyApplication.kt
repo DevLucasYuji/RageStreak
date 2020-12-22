@@ -47,6 +47,7 @@ class MyApplication : Application(), StorageModule {
         val distinctModules = modules.filter { !this.modules.contains(it) }
         if (distinctModules.isNotEmpty()) {
             loadKoinModules(distinctModules)
+            this.modules.addAll(distinctModules)
         }
     }
 }
