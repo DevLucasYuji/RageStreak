@@ -5,6 +5,13 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.ragestreak.home.fragment.WelcomeFragment"
+        android:label="welcomeFragment"
+        app:moduleName="home"
+        />
+
+    <fragment
         android:id="@+id/homeFragment"
         android:name="com.ragestreak.home.fragment.HomeFragment"
         android:label="HomeFragment"

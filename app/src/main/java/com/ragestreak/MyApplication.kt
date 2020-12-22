@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.ragestreak.commons.modules.coreModules
 import com.google.android.play.core.splitcompat.SplitCompat
-import com.ragestreak.commons.local.RageDatabase
+import com.ragestreak.commons.local.dao.UserDAO
 import com.ragestreak.commons.local.model.User
 import com.ragestreak.commons.modules.StorageModule
 import kotlinx.coroutines.CoroutineScope
@@ -15,7 +15,6 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
-import org.koin.dsl.module
 
 class MyApplication : Application(), StorageModule {
 
@@ -30,10 +29,10 @@ class MyApplication : Application(), StorageModule {
         }
 
         CoroutineScope(Dispatchers.IO).launch {
-            val db: RageDatabase = get()
-            val user = db.userDAO().getUser()
+            val userDAO: UserDAO = get()
+            val user = userDAO.getUser()
             if (user == null) {
-                db.userDAO().createUser(User(0, true))
+                userDAO.createUser(User(0, true))
             }
         }
     }
