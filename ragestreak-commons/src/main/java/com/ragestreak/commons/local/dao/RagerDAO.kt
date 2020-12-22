@@ -9,10 +9,10 @@ import com.ragestreak.commons.local.model.Rager
 @Dao
 interface RagerDAO {
 
-    @Query("SELECT * FROM rager")
+    @Query("SELECT * FROM ragers")
     fun getAll(): List<Rager>
 
-    @Query("SELECT * FROM rager where id = :id")
+    @Query("SELECT * FROM ragers where id = :id")
     fun findRager(id: String): Rager
 
     @Insert

@@ -7,10 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "ragers")
 data class Rager(
     @PrimaryKey(autoGenerate = true)
-    private val id: Long,
-    private val name: String,
-    private val lastName: String,
-    private val games: List<Game>,
+    val id: Long,
+    val name: String,
+    val lastName: String,
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    private val picture: ByteArray? = null,
+    val picture: ByteArray? = null,
 )

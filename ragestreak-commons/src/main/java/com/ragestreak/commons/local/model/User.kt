@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "users")
 data class User(
     @PrimaryKey(autoGenerate = true)
-    private val id: Long,
-    private var firstTime: Boolean
+    val id: Long,
+    val firstTime: Boolean
 )

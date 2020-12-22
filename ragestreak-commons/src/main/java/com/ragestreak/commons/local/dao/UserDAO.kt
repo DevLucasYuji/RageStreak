@@ -6,7 +6,7 @@ import com.ragestreak.commons.local.model.User
 @Dao
 interface UserDAO {
 
-    @Query("SELECT * FROM user LIMIT 1")
+    @Query("SELECT * FROM users LIMIT 1")
     fun getUser(): User?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
