@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.ragestreak.home"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -34,6 +34,7 @@ android {
 
 dependencies {
     kapt 'com.android.databinding:compiler:3.1.4'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation project(":app")
     implementation project(":ragestreak-commons")

@@ -3,7 +3,9 @@
     <color name="colorPrimary">#121212</color>
     <color name="colorPrimaryDark">#121212</color>
     <color name="colorAccent">#7A4DDF</color>
+    <color name="colorBottomNavigation">#222126</color>
 
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
+
 </resources>

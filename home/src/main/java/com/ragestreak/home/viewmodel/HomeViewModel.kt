@@ -23,6 +23,8 @@ class HomeViewModel(private val usecase: HomeUseCase) : BaseViewModel() {
             val isFirstTime = usecase.isFirstTime()
             if(isFirstTime) {
                 event.postValue(HomeEvent.NavigateToWelcome)
+            } else {
+                event.postValue(HomeEvent.UserIsReady)
             }
         }
     }

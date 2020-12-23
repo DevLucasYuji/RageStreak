@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.ragestreak.commons.modules.RequireInject
 import com.ragestreak.commons.modules.StorageModule
 
-abstract class BaseFragment<B: ViewDataBinding> : Fragment() {
+abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
 
     abstract val layoutRes: Int
 
@@ -43,5 +45,42 @@ abstract class BaseFragment<B: ViewDataBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bottomNavigation = (activity as? BaseActivity)?.bottomNavigationView
         afterViews()
+    }
+
+
+    private fun getAnimation(anim: Int, callback: (() -> Unit)? = null): Animation {
+        val animation = AnimationUtils.loadAnimation(context, anim)
+        animation.setAnimationListener(object: Animation.AnimationListener {
+            override fun onAnimationRepeat(p0: Animation?) {}
+
+            override fun onAnimationEnd(p0: Animation?) {
+                callback?.invoke()
+            }
+
+            override fun onAnimationStart(p0: Animation?) {}
+        })
+
+        return animation
+    }
+
+    fun fadeInBottomNavigation() {
+        visibleBottomNavigation()
+        val animation = getAnimation(R.anim.fade_in)
+        bottomNavigation?.startAnimation(animation)
+    }
+
+    fun fadeOutBottomNavigation() {
+        val animation = getAnimation(R.anim.fade_out) {
+            goneBottomNavigation()
+        }
+        bottomNavigation?.startAnimation(animation)
+    }
+
+    private fun visibleBottomNavigation() {
+        bottomNavigation?.visibility = View.VISIBLE
+    }
+
+    private fun goneBottomNavigation() {
+        bottomNavigation?.visibility = View.GONE
     }
 }

@@ -2,6 +2,7 @@ package com.ragestreak.commons.local.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "ragers")
@@ -11,5 +12,8 @@ data class Rager(
     val name: String,
     val lastName: String,
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    val picture: ByteArray? = null,
-)
+    val picture: ByteArray? = null
+) {
+    @Ignore
+    var games: MutableList<Game> = mutableListOf()
+}
