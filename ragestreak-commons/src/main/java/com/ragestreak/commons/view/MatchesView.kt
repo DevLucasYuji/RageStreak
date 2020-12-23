@@ -10,8 +10,17 @@ import com.ragestreak.commons.R
 
 class MatchesView : AppCompatButton {
 
-    private lateinit var paint: Paint
-    private lateinit var rect: RectF
+    private val paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = (background as? ColorDrawable)?.color ?: ContextCompat.getColor(
+            context,
+            R.color.colorAccent
+        )
+        style = Paint.Style.STROKE
+        strokeWidth = 10F
+        isAntiAlias = false
+    }
+
+    private val rect: RectF = RectF()
 
     constructor(context: Context) : super(context)
 
@@ -24,16 +33,6 @@ class MatchesView : AppCompatButton {
     )
 
     init {
-        paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = (background as? ColorDrawable)?.color ?: ContextCompat.getColor(
-                context,
-                R.color.colorAccent
-            )
-            style = Paint.Style.STROKE
-            strokeWidth = 10F
-            isAntiAlias = false
-        }
-        rect = RectF()
         setBackgroundColor(ContextCompat.getColor(context, R.color.transparent))
 
     }
