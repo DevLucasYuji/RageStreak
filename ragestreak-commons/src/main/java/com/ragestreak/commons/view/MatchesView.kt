@@ -53,6 +53,6 @@ class MatchesView : AppCompatButton {
         val right: Float = (minDimen - strokeWidth / 2).toFloat()
         val bottom: Float = (minDimen - strokeWidth / 2).toFloat()
         rect.set(left, top, right, bottom)
-        canvas!!.drawArc(rect, 2F, 360F, true, paint)
+        canvas?.drawArc(rect, 2F, 360F, true, paint)
     }
 }
